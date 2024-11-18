@@ -29,12 +29,12 @@ The following table shows which functions **Nmappy** supports:
 | --min | Minimum port number to scan <br> default: 1 | no |
 | --max | Maximum port number to scan <br> default: 65535 | no |
 
-Flow of the Function
+**Flow of the Function**
 - The program resolves the target hostname or DNS address to an IP address, if necessary.
 - It calls the `threaded_port_scan()`-function to perform a multithreaded port scan within the specified port range:
-    - The number of the opened threads depends on port range, but 100 threads are the maximun
+    - The number of the opened threads depends on the given port range, but 100 threads are the maximun.
     - For the first 100 ports of the given port-range the running service is identified by sending protocol-specific probes. 
-- The output is a list of the open ports.
+- The output is a list of the open ports and services.
 
 ## Getting Started
 0) <a href="https://docs.github.com/de/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo">Fork</a> the project to your namespace, if you want to make changes or open a <a href="https://docs.github.com/de/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests">Pull Request</a>.
@@ -59,7 +59,7 @@ Flow of the Function
     - - <ins>Example</ins>: Scan the ports 10 to 100 on the server with the IP-Address 123.4.5.6:  
     `python nmappy.py 123.4.5.6 -p --min 10 --max 100`
 
-- The Programms lists you all open ports in the terminal. In addition the running service for the first 100 ports are identified.
+- The programm lists you the open ports in the terminal. In addition the running service for the first 100 ports are identified.
     - For the example above the output could look like this:
     
     ```
